@@ -1,0 +1,11 @@
+RewriteEngine on
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ index.php?/$1 [L]
+RewriteCond $1 !^(index\.php|images|img|css|js|robots\.txt)
+<Files 403.shtml>
+order allow,deny
+allow from all
+</Files>
+
+deny from 110.234.84.66
